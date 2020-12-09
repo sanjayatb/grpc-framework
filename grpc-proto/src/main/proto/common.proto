@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.stb.grpc;
+
+option java_multiple_files = true;
+option java_package = "com.stb.grpc.common";
+
+enum StatusCodeProto {
+  UNKNOWN = 0;
+  OK = 200;
+  NOT_FOUND = 404;
+  NOT_CONTENT = 204;
+  INTERNAL_SERVER_ERROR = 500;
+  INVALID_REQUEST = 400;
+}
+
+message ResponseStatusProto {
+  StatusCodeProto code = 1;
+  string description = 2;
+}
+
